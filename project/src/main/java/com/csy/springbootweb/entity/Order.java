@@ -1,13 +1,21 @@
 package com.csy.springbootweb.entity;
-
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "t_order")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
+    @Column(name = "order_no", length = 50)
     private String no;
+     @Temporal(TemporalType.DATE)
+     @Column(name = "order_date")
     private Date date;
-    private int quantity;
+     @Column(name = "quantity")
+    private Integer quantity;
 
     public String getNo() {
         return no;
@@ -25,11 +33,11 @@ public class Order {
         this.date = date;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

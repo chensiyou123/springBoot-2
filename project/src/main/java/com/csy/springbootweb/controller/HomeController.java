@@ -69,4 +69,9 @@ public class HomeController {
     public String order() {
         return "order";
     }
+
+    @RequestMapping("/jpa")
+    public String jpa() {
+        return "jpa";
+    }
 }
