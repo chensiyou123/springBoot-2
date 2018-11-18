@@ -4,9 +4,10 @@ import java.util.Date;
 
 public class Order {
 
-    public String no;
-    public Date date;
-    public int quantity;
+    private String id;
+    private String no;
+    private Date date;
+    private int quantity;
 
     public String getNo() {
         return no;
@@ -30,5 +31,13 @@ public class Order {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
