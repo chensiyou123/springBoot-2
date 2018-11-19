@@ -2,12 +2,14 @@ package com.csy.springbootweb.controller;
 
 import com.csy.springbootweb.entity.Order;
 import com.csy.springbootweb.repository.OrderRepository;
+import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/jpa")
@@ -25,6 +27,9 @@ public class JpaController {
     @ResponseBody
     public Map<String, Object> save(@RequestBody Order entity) {
         Map<String, Object> result = new HashMap<>();
+        if(StringUtils.isNullOrEmpty(entity.getId())){
+            entity.setId(UUID.randomUUID().toString());
+        }
         entity = orderRepository.save(entity);
         result.put("id", entity.getId());
         return result;

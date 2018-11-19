@@ -7,7 +7,6 @@ import java.util.Date;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
     @Column(name = "order_no", length = 50)
     private String no;

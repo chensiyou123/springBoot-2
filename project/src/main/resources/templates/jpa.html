@@ -23,9 +23,11 @@
 
             //编辑
             $scope.edit = function(id) {
+                console.log("123")
                 for ( var i in $scope.rows) {
                     var row = $scope.rows[i];
                     if (id == row.id) {
+                        console.log("id==>",id);
                         $scope.data = row;
                         return;
                     }
