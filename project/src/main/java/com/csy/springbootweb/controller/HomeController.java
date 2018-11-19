@@ -74,4 +74,9 @@ public class HomeController {
     public String jpa() {
         return "jpa";
     }
+
+    @RequestMapping("/aop")
+    public String aop() {
+        return "aop";
+    }
 }

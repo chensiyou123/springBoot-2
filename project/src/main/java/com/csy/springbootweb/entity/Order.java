@@ -1,5 +1,8 @@
 package com.csy.springbootweb.entity;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -9,11 +12,19 @@ public class Order {
     @Id
     private String id;
     @Column(name = "order_no", length = 50)
+
+    @NotNull
+    @Size(min = 10, max = 20)
     private String no;
-     @Temporal(TemporalType.DATE)
-     @Column(name = "order_date")
+
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    @Column(name = "order_date")
     private Date date;
-     @Column(name = "quantity")
+
+    @Min(100)
+    @NotNull
+    @Column(name = "quantity")
     private Integer quantity;
 
     public String getNo() {
