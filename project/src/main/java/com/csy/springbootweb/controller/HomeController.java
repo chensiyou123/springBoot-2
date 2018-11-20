@@ -89,4 +89,9 @@ public class HomeController {
     public String redisChach() {
         return "redisChach";
     }
+
+    @RequestMapping("/session")
+    public String session() {
+        return "session";
+    }
 }
