@@ -15,10 +15,4 @@ public class MainController {
         return "index";
     }
 
-    @PostMapping("/save")
-    public @ResponseBody Map<String, Object> save() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("msg", "ok");
-        return map;
-    }
 }

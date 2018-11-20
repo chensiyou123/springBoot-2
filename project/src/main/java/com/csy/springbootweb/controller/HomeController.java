@@ -79,4 +79,14 @@ public class HomeController {
     public String aop() {
         return "aop";
     }
+
+    @RequestMapping("/redis")
+    public String redis() {
+        return "redis";
+    }
+
+    @RequestMapping("/redisChach")
+    public String redisChach() {
+        return "redisChach";
+    }
 }
